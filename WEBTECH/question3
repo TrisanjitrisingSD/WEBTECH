@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-1</title>
+</head>
+
+<body style="background-color:aqua;">
+    <div id="divv">
+        <input style="background-color:beige;" id="num1" type="number" placeholder="enter first number " />
+        <br>
+        <input style="background-color:beige;" id="num2" type="number" placeholder="enter second number " />
+        <br>
+        <br>
+        <button style="background-color:beige;" id="button">Click to Add</button>
+    </div>
+    <script>
+        document.getElementById("button").addEventListener("click", () => {
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+
+            let f = document.createElement("p");
+            let divv = document.getElementById("divv");
+
+            f.innerText = `The Addition Result is ${num1 + num2}`;
+            f.style.color = "green";
+
+            divv.appendChild(f);
+        });
+    </script>
+
+</body>
+
+</html>

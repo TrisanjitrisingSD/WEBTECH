@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-1</title>
+</head>
+
+<body style="background-color:aqua;">
+    <div id="divv"><button id="button">Click To This Button</button></div>
+    <script>
+        let button = document.getElementById("button")
+        let divv = document.getElementById("divv")
+        button.addEventListener("click", () => {
+            alert("Button is Clicked")
+            let c = document.createElement("div")
+            c.innerText = "hello , Button is Clicked , I am Trisanjit"
+            c.style.color = "red"
+            divv.appendChild(c);
+        })
+    </script>
+</body>
+
+</html>
