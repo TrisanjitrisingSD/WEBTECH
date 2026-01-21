@@ -16,7 +16,7 @@
     let Bar=document.getElementById("Bar");
     let ff=new Date();
     ti.innerText=`The time is ${ff.toLocaleTimeString()}`
-    date.innerText=`The time is ${ff.toLocaleDateString()}`
+    date.innerText=`The Date is ${ff.toLocaleDateString()}`
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     Bar.innerText = `Today is: ${days[ff.getDay()]}`;
 }
