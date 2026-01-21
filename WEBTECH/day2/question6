@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Calculation</title>
+</head>
+<body>
+
+    <h3>Enter Marks</h3>
+
+    Subject 1: <input type="number" id="m1"><br><br>
+    Subject 2: <input type="number" id="m2"><br><br>
+    Subject 3: <input type="number" id="m3"><br><br>
+
+    <button type="button" onclick="calculate()">Calculate</button>
+
+    <p id="total"></p>
+    <p id="avg"></p>
+    <p id="result"></p>
+
+<script>
+function calculate() {
+    let m1 = Number(document.getElementById("m1").value);
+    let m2 = Number(document.getElementById("m2").value);
+    let m3 = Number(document.getElementById("m3").value);
+
+    if (isNaN(m1) || isNaN(m2) || isNaN(m3)) {
+        document.getElementById("result").innerText = "Please enter valid marks";
+        return;
+    }
+
+    let total = m1 + m2 + m3;
+    let average = total / 3;
+
+    document.getElementById("total").innerText =
+        `Total Marks: ${total}`;
+
+    document.getElementById("avg").innerText =
+        `Average Marks: ${average.toFixed(2)}`;
+
+    
+    let result = (m1 >= 40 && m2 >= 40 && m3 >= 40) ? "PASS" : "FAIL";
+
+    document.getElementById("result").innerText =
+        `Result: ${result}`;
+}
+</script>
+
+</body>
+</html>

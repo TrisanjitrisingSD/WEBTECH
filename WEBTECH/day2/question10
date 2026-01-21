@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Text and Color</title>
+</head>
+<body>
+
+    <button type="button" onclick="toggleText()">Change Text</button>
+
+    <p id="para">This is the original text.</p>
+
+<script>
+let isChanged = false;
+
+function toggleText() {
+    const p = document.getElementById("para");
+
+    if (!isChanged) {
+        p.innerText = "The text has been changed!";
+        p.style.color = "red";
+    } else {
+        p.innerText = "This is the original text.";
+        p.style.color = "blue";
+    }
+
+    isChanged = !isChanged;
+}
+</script>
+
+</body>
+</html>

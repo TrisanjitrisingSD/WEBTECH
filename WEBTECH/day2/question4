@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 1</title>
+</head>
+<body>
+    <button type="submit" id="sub" onclick="func()">Click</button>
+     <br>
+      <p id="para"></p>
+      <p id="pa"></p>
+<script>
+ const col = [
+        "red",
+        "green",
+        "blue",
+        "yellow",
+        "orange",
+        "purple",
+        "pink",
+        "cyan"
+    ];
+ function func(){
+    const rand = Math.floor(Math.random() * col.length)
+    document.body.style.backgroundColor=col[rand];
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 1</title>
+</head>
+<body>
+    <button type="submit" id="sub" onclick="func()">Click</button>
+     <br>
+      <p id="para"></p>
+      <p id="pa"></p>
+<script>
+ var count=0;   
+ function func(){
+    count++;
+    let f=document.getElementById("para");
+    f.innerText=`The Button is Clicked ${count} times`
+}
+</script>
+</body>
+</html>

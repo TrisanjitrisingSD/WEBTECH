@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Box Validation</title>
+    <style>
+        #warning {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <label>Enter Your Name:</label>
+    <input type="text" id="txt">
+    <button type="button" onclick="validate()">Submit</button>
+
+    <p id="warning"></p>
+
+<script>
+function validate() {
+    let textBox = document.getElementById("txt");
+    let warning = document.getElementById("warning");
+
+    if (textBox.value.trim() === "") {
+        warning.innerText = "? Please fill out this field!";
+    } else {
+        warning.innerText = "Input submitted successfully!";
+        warning.style.color = "green";
+    }
+}
+</script>
+
+</body>
+</html>
+

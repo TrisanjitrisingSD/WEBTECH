@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 1</title>
+</head>
+<body>
+    <label for="box">Enter a Number </label>
+    <input id="box" type="number" />
+    <button type="submit" id="sub" onclick="func()">Submit</button>
+     <br>
+      <p id="para"></p>
+<script>
+ function func(){
+ let f=document.getElementById("box");
+ let p=document.getElementById("para");
+ let val=Number(f.value);
+ if (f.value === "" || isNaN(val)) {
+    p.innerText = "Enter a Valid Number";
+    return;
+}
+ if(val%2){
+    p.innerText="This is an ODD Number";
+ }else{
+    p.innerText="This is an EVEN Number";
+ }
+}
+</script>
+</body>
+</html>
+

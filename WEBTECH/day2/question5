@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 1</title>
+</head>
+<body>
+    <button type="submit" id="sub" onclick="func()">Click</button>
+     <br>
+      <p id="ti"></p>
+      <p id="date"></p>
+      <p id="Bar"></p>
+<script>
+ function func(){
+    let ti=document.getElementById("ti");
+    let date=document.getElementById("date");
+    let Bar=document.getElementById("Bar");
+    let ff=new Date();
+    ti.innerText=`The time is ${ff.toLocaleTimeString()}`
+    date.innerText=`The time is ${ff.toLocaleDateString()}`
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    Bar.innerText = `Today is: ${days[ff.getDay()]}`;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 1</title>
+</head>
+<body>
+    <label for="box">Enter a Number </label>
+    <input id="box" type="number" />
+    <button type="submit" id="sub" onclick="func()">Submit</button>
+     <br>
+      <p id="para"></p>
+      <p id="pa"></p>
+<script>
+ function func(){
+ let f=document.getElementById("box");
+ let p=document.getElementById("para");
+ let pa=document.getElementById("pa");
+ let val=Number(f.value);
+ if (f.value === "" || isNaN(val)) {
+    p.innerText = "Enter a Valid Number";
+    return;
+}
+    p.innerText=`The Cube of the Number is ${val*val*val}`;
+    pa.innerText=`The Square of the Number is ${val*(val)}`;
+}
+</script>
+</body>
+</html>
+
