@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em;
+}
+
+section {
+    margin: 20px;
+}
+
+.serif {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+}
+
+.sans-serif {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.2em;
+}
+
+.monospace {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+}
+
+
+.background-image {
+    width: 100%;
+    height: 300px;
+    background-image: url('https://via.placeholder.com/500');
+    background-repeat: no-repeat;  /* Prevent the image from repeating */
+    background-size: cover;  /* Make the image cover the whole div */
+    background-position: center center;  /* Center the image */
+    color: white;
+    text-align: center;
+    padding-top: 120px;
+}
+
+.background-image p {
+    font-size: 1.5em;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Web Page</h1>
+    </header>
+
+    <section>
+        <h2>Different Font Styles</h2>
+        <p class="serif">This is a paragraph with a <strong>serif font</strong> style.</p>
+        <p class="sans-serif">This is a paragraph with a <strong>sans-serif font</strong> style.</p>
+        <p class="monospace">This is a paragraph with a <strong>monospace font</strong> style.</p>
+    </section>
+
+    <section>
+        <h2>Image Background</h2>
+        <div class="background-image">
+            <p>We are using a background image with control over its repetition.</p>
+        </div>
+    </section>
+
+</body>
+</html>

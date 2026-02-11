@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Words Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Number to Words Converter</h1>
+    <p>Enter a number between 0 and 999:</p>
+    
+    <input type="text" id="numberInput" oninput="convertToWords()" placeholder="Enter number">
+    <button onclick="convertToWords()">Convert</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function convertToWords() {
+            const num = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+
+            if (!/^\d+$/.test(num)) {
+                resultElement.textContent = "Please enter only numeric values.";
+                return;
+            }
+
+            if (num < 0 || num > 999) {
+                resultElement.textContent = "Please enter a number between 0 and 999.";
+                return;
+            }
+
+        
+            const words = numberToWords(num);
+            resultElement.textContent = words;
+        }
+
+        function numberToWords(num) {
+            const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            const teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+            const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+            const hundreds = ["", "One Hundred", "Two Hundred", "Three Hundred", "Four Hundred", "Five Hundred", "Six Hundred", "Seven Hundred", "Eight Hundred", "Nine Hundred"];
+
+            if (num === "0") {
+                return "Zero";
+            }
+
+            let result = "";
+
+        
+            if (num.length === 3) {
+                result += hundreds[parseInt(num[0])] + " ";
+                num = num.slice(1);
+            }
+
+            
+            if (num.length === 2 && num[0] === "1") {
+                result += teens[parseInt(num[1])] + " ";
+            } else {
+                if (num[0] !== "0") {
+                    result += tens[parseInt(num[0])] + " ";
+                }
+                if (num[1] !== "0") {
+                    result += ones[parseInt(num[1])] + " ";
+                }
+            }
+
+            return result.trim();
+        }
+    </script>
+
+</body>
+</html>

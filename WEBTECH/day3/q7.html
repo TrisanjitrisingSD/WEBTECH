@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Promotion Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header, footer {
+            background: linear-gradient(135deg, #4CAF50, #2c6e49);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+        }
+        nav ul li a:hover {
+            color: #4CAF50;
+            transition: color 0.3s ease;
+        }
+        .content-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .product-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .product-image:hover {
+            transform: scale(1.1);
+        }
+        .product-details {
+            margin-left: 20px;
+            max-width: 500px;
+        }
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+            .product-details {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Exciting New Product</h1>
+        <p>Transform your experience with our latest product!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#product-info">Product Info</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#buy-now">Buy Now</a></li>
+        </ul>
+    </nav>
+
+    <section id="product-info" class="content-section">
+        <h2>Our Latest Product</h2>
+        <div class="product-container">
+            <img src="https://via.placeholder.com/400" alt="Product Image" class="product-image">
+            <div class="product-details">
+                <h3>Product Name</h3>
+                <p>This innovative product will change the way you experience technology. With advanced features and sleek design, it's the ultimate choice for modern users.</p>
+                <button class="cta-button" onclick="alert('You clicked Buy Now!')">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="content-section">
+        <h2>Product Features</h2>
+        <ul class="feature-list">
+            <li>Feature 1: Cutting-edge technology</li>
+            <li>Feature 2: Sleek design and compact</li>
+            <li>Feature 3: Long-lasting battery life</li>
+            <li>Feature 4: User-friendly interface</li>
+        </ul>
+    </section>
+
+    <section id="buy-now" class="content-section">
+        <h2>Ready to Purchase?</h2>
+        <p>Click below to get your hands on this incredible product.</p>
+        <button class="cta-button" onclick="alert('Proceeding to checkout!')">Proceed to Checkout</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Product Promotion. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function alertMessage(message) {
+            alert(message);
+        }
+    </script>
+
+</body>
+</html>
+
