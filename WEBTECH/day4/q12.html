@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Limit Checker</title>
+</head>
+<body>
+    <textarea id="textarea" maxlength="200" rows="4" cols="50"></textarea>
+    <p id="remaining">Remaining characters: 200</p>
+    <script>
+        const textarea = document.getElementById('textarea');
+        const remaining = document.getElementById('remaining');
+
+        textarea.addEventListener('input', () => {
+            const remainingChars = 200 - textarea.value.length;
+            remaining.textContent = `Remaining characters: ${remainingChars}`;
+            if (remainingChars <= 0) {
+                textarea.value = textarea.value.slice(0, 200);
+            }
+        });
+    </script>
+</body>
+</html>
+

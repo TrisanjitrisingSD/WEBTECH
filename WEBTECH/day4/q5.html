@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer</title>
+</head>
+<body>
+  <input type="number" id="seconds" placeholder="Enter seconds">
+  <button onclick="startTimer()">Start</button>
+  <p id="timer"></p>
+
+  <script>
+    let timer;
+
+    function startTimer() {
+      const seconds = parseInt(document.getElementById('seconds').value);
+      let timeLeft = seconds;
+      timer = setInterval(() => {
+        if (timeLeft > 0) {
+          timeLeft--;
+          document.getElementById('timer').textContent = timeLeft + ' seconds left';
+        } else {
+          clearInterval(timer);
+          document.getElementById('timer').textContent = 'Time Over';
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
+

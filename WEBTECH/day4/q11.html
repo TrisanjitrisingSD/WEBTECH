@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+    <style>
+        body.light { background-color: white; color: black; }
+        body.dark { background-color: black; color: white; }
+    </style>
+</head>
+<body>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+    <script>
+        if(localStorage.getItem('theme')) {
+            document.body.classList.add(localStorage.getItem('theme'));
+        }
+
+        function toggleTheme() {
+            if (document.body.classList.contains('light')) {
+                document.body.classList.replace('light', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.replace('dark', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+    </script>
+</body>
+</html>
+

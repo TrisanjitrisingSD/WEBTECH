@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OTP Generator</title>
+</head>
+<body>
+  <button onclick="generateOTP()">Generate OTP</button>
+  <input type="text" id="otpInput" placeholder="Enter OTP">
+  <button onclick="verifyOTP()">Verify OTP</button>
+  <p id="otpMessage"></p>
+
+  <script>
+    let generatedOTP = '';
+
+    function generateOTP() {
+      generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+      alert('Your OTP is: ' + generatedOTP);
+    }
+
+    function verifyOTP() {
+      const userOTP = document.getElementById('otpInput').value;
+      const message = userOTP === generatedOTP ? 'Valid OTP' : 'Invalid OTP';
+      document.getElementById('otpMessage').textContent = message;
+    }
+  </script>
+</body>
+</html>
+

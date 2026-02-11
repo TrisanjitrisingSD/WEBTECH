@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Search Filter</title>
+</head>
+<body>
+  <input type="text" id="search" placeholder="Search">
+  <ul id="itemList">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+    <li>Date</li>
+    <li>Elderberry</li>
+    <li>Fig</li>
+    <li>Grape</li>
+    <li>Honeydew</li>
+    <li>Kiwi</li>
+    <li>Lemon</li>
+  </ul>
+
+  <script>
+    document.getElementById('search').addEventListener('keyup', function() {
+      const filter = this.value.toLowerCase();
+      const items = document.querySelectorAll('#itemList li');
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
+

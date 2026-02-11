@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Session</title>
+</head>
+<body>
+  <input type="text" id="username" placeholder="Enter Username">
+  <button onclick="login()">Login</button>
+  <button onclick="logout()">Logout</button>
+  <p id="message"></p>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      localStorage.setItem('username', username);
+      document.getElementById('message').textContent = `Welcome back, ${username}`;
+    }
+
+    function logout() {
+      localStorage.removeItem('username');
+      document.getElementById('message').textContent = '';
+    }
+
+    if (localStorage.getItem('username')) {
+      document.getElementById('message').textContent = `Welcome back, ${localStorage.getItem('username')}`;
+    }
+  </script>
+</body>
+</html>
+

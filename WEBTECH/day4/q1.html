@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student List Manager</title>
+</head>
+<body>
+  <input type="text" id="studentName" placeholder="Enter student name">
+  <button onclick="addStudent()">Add Student</button>
+  <ul id="studentList"></ul>
+  <p>Total Students: <span id="studentCount">0</span></p>
+
+  <script>
+    let students = [];
+
+    function addStudent() {
+      const studentName = document.getElementById('studentName').value;
+      if (studentName) {
+        students.push(studentName);
+        updateStudentList();
+      }
+    }
+
+    function removeStudent(index) {
+      students.splice(index, 1);
+      updateStudentList();
+    }
+
+    function updateStudentList() {
+      const studentList = document.getElementById('studentList');
+      studentList.innerHTML = '';
+      students.forEach((student, index) => {
+        const li = document.createElement('li');
+        li.textContent = student;
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.onclick = () => removeStudent(index);
+        li.appendChild(removeButton);
+        studentList.appendChild(li);
+      });
+      document.getElementById('studentCount').textContent = students.length;
+    }
+  </script>
+</body>
+</html>
+
